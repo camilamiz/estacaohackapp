@@ -44,5 +44,10 @@ class MainActivity : AppCompatActivity() {
                 .create()
                 .show()
         }
+        //Listen to Cellep website button click
+        btnMainCellep.setOnClickListener{
+            val mIntent = Intent(this, WebActivity::class.java)
+            startActivity(mIntent)
+        }
     }
 }
