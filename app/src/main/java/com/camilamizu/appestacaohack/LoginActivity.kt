@@ -1,5 +1,6 @@
 package com.camilamizu.appestacaohack
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,12 +28,19 @@ class LoginActivity : AppCompatActivity() {
                 edtLoginPassword.error = "Campo obrigatório."
                 edtLoginPassword.requestFocus()
             } else {
+                //Get info in Shared preferences and validate - challenge
+                val sharedPreferences = getSharedPreferences("register_$email", Context.MODE_PRIVATE)
+
+                val sharedPrefEmail = sharedPreferences.getString("EMAIL", "Chave não encontrada")
+                val sharedPrefPassword = sharedPreferences.getString("PASSWORD", "Chave não encontrada")
+
                 // Verify email and password
-                if (email == "admin@admin.com" && password == "admin") {
+                if (email == sharedPrefEmail && password == sharedPrefPassword) {
                     //Success message via Toast
                     Toast.makeText(this, "Usuário logado com sucesso!", Toast.LENGTH_LONG).show()
                     //Open MainAcitvity
                     val mIntent = Intent(this, MainActivity::class.java)
+                    mIntent.putExtra("INTENT_EMAIL", email)
                     startActivity(mIntent)
                     finish()
                 } else {
