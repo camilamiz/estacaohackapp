@@ -20,11 +20,11 @@ class LoginActivity : AppCompatActivity() {
 
             //Field validation
             if (email.isEmpty()) {
-                edtLoginEmail.error = "Email em branco."
+                edtLoginEmail.error = "Campo obrigatório."
                 //Defines the cursor focus and directs the user
                 edtLoginEmail.requestFocus()
             } else if (password.isEmpty()) {
-                edtLoginPassword.error = "Senha em branco."
+                edtLoginPassword.error = "Campo obrigatório."
                 edtLoginPassword.requestFocus()
             } else {
                 // Verify email and password
