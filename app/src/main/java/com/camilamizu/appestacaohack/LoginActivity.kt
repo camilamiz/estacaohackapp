@@ -34,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
                     //Open MainAcitvity
                     val mIntent = Intent(this, MainActivity::class.java)
                     startActivity(mIntent)
+                    finish()
                 } else {
                     Toast.makeText(this, "Email ou senha incorretos.", Toast.LENGTH_LONG).show()
                 }
