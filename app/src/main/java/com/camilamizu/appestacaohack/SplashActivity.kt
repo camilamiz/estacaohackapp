@@ -16,8 +16,8 @@ class SplashActivity : AppCompatActivity() {
             // Start an intent - transition from Splash to Login
             val mIntent = Intent(this, LoginActivity::class.java)
             startActivity(mIntent)
-            // Does not allow user to go back to splash screen
+                // Does not allow user to go back to splash screen
             finish()
-        }, 5000)
+        }, 4000)
     }
 }
