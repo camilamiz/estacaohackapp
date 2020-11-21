@@ -39,5 +39,11 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+
+        //Listen to "Cadastrar" button
+        btnLoginRegister.setOnClickListener {
+            val mIntent = Intent(this, RegisterActivity::class.java)
+            startActivity(mIntent)
+        }
     }
 }
